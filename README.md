@@ -1,5 +1,27 @@
 # Adwaita cursors for HiDPI displays
 
+## Build steps for white variant
+
+This will build cursors and also check them in for easy installation.
+
+Install dependencies: python-pypng, inkscape, xcursorgen.
+
+```sh
+./colorize.py "#fffffe" > adwaita-white.svg
+# edit adwaita-white.svg:
+# replace all #ffffff with #000000
+# replace all #fffffe with #ffffff
+cp -f adwaita-white.svg adwaita.svg
+make distclean
+make
+rm -fr Adwaita-white
+cp -r Adwaita Adwaita-white
+git add --all adwaita-white.svg Adwaita-white
+git checkout adwaita.svg
+```
+
+## Original description
+
 GNOME officially provides the [Adwaita cursor theme][1] only in sizes
 24, 32, 48, 64, and 96.  This is inconvenient if you use displays that
 require fractional scaling, e.g., on a WQHD display, a size 48 cursor

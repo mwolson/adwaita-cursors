@@ -1,3 +1,4 @@
 *.png
 *.in
-Adwaita*/cursors
+Adwaita/cursors
+Adwaita-highlight/cursors
